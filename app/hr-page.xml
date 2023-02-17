@@ -1,0 +1,21 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="pageLoaded">
+  <ActionBar title="Recursos Humanos"></ActionBar>
+  <StackLayout>
+    <Label class="hr-label" text="Agregar nuevo empleado"></Label>
+    <TextField id="name" class="hr-textfield" hint="Nombre"></TextField>
+    <TextField id="position" class="hr-textfield" hint="Posición"></TextField>
+    <TextField id="salary" class="hr-textfield" hint="Salario"></TextField>
+    <Button class="hr-button" text="Guardar" tap="{{ saveEmployee }}"></Button>
+    <Label class="hr-label" text="Lista de empleados"></Label>
+    <ListView class="hr-listview" items="{{ employees }}">
+      <ListView.itemTemplate>
+        <GridLayout columns="*, auto">
+          <Label class="hr-name" text="{{ name }}"></Label>
+          <Label class="hr-position" text="{{ position }}"></Label>
+          <Label class="hr-salary" text="{{ '$' + salary }}"></Label>
+        </GridLayout>
+      </ListView.itemTemplate>
+    </ListView>
+  </StackLayout>
+</Page>
+
